@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Static API Example</title>
+</head>
+<body>
+  <h1>Static API Example</h1>
+  <div id="output"></div>
+
+  <script>
+    // Fetch the JSON file from GitHub Pages
+    fetch('https://AzzuraStudio.github.io/data-api/data.json')
+      .then(response => response.json())
+      .then(data => {
+        // Display the data on the page
+        const output = document.getElementById('output');
+        output.innerHTML = `<p>${data.message}</p>`;
+        data.data.forEach(item => {
+          output.innerHTML += `<p>ID: ${item.id}, Name: ${item.name}</p>`;
+        });
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  </script>
+</body>
+</html>
