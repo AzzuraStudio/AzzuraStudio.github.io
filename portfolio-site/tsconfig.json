@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ESNext",
+    "jsx": "react",
+    "outDir": "./build"
+  },
+  "include": ["index.tsx"]
+}
